@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base target="_blank">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>getRenoed - Links</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="container">
+  <div class="hero-container" style="text-align: center; margin-bottom: 30px;">
+<a href="/getrenoed/index.htm" target="_self" style="text-decoration: none; color: inherit;">
+  <img src="perfil.jpg" 
+       alt="Reno Quintero" 
+       style="width: 180px; height: 180px; border-radius: 50%; border: 4px solid var(--negro); object-fit: cover; margin-bottom: 1px; box-shadow: 6px 6px 0px var(--rosa);cursor: url('images/ani_cursor.gif'), pointer;">
+</a>
+  <h1> <a href="/getrenoed/index.htm" target="_self" style="color: var(--negro)">getRenoed test</a>
+  </h1>
+      <h2>
+        Jack of all trades!🃏
+      </h2>
+  <h3>
+  <a href="https://discord.gg/ZHpCRGwGhR" style="margin-bottom: 5px;">JOIN THE DISCORD! </a>
+  </h3>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('escucha')">🎵 LISTEN ▼</button>
+    <div id="escucha" class="dropdown-content">
+      <a href="https://tidal.com/artist/76852786" class="btn-negro">TIDAL</a>
+      <a href="https://music.youtube.com/@reno.quintero" class="btn-negro">YOUTUBE MUSIC</a>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('lee')">📖 READ ▼</button>
+    <div id="lee" class="dropdown-content">
+      <a href="https://www.instagram.com/getRenoed" class="btn-negro">INSTAGRAM</a>
+      <a href="https://bsky.app/profile/getRenoed.bsky.social" class="btn-negro">BSKY</a>
+      <a href="https://twitter.com/getrenoed" class="btn-negro">TWITTER(X)</a>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('mira')">👁️ WATCH ▼</button>
+    <div id="mira" class="dropdown-content">
+      <a href="https://www.youtube.com/@getRenoed" class="btn-negro">YOUTUBE</a>
+      <a href="https://www.youtube.com/@getvoded" class="btn-negro">YOUTUBE (VODs)</a>
+      <a href="https://www.twitch.tv/getrenoed" class="btn-negro">TWITCH</a>
+      <a href="https://www.tiktok.com/@getrenoed" class="btn-negro">TIKTOK</a>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('apoya')">☕️SUPPORT ▼</button>
+    <div id="apoya" class="dropdown-content">
+      <a href="https://ko-fi.com/renoquintero" class="btn-negro">KO-FI</a>
+      <a href="https://reno-quintero.bandcamp.com/track/an-logo" class="btn-negro">BANDCAMP</a>
+      <a href="https://discord.gg/ZHpCRGwGhR" class="btn-negro">DISCORD</a>
+    </div>
+
+  </div>
+
+
+<aside class="sfn-float-widget" aria-label="SFN Lore Portal">
+    <a href="http://soulfirenation.neocities.org" class="sfn-float-link" target="_self">
+      <img src="blue-flame.gif" alt="Blue Flame" class="sfn-float-icon" id="sfn-widget-img" />
+      <span class="sfn-tooltip">The Soulfire Nation Archives</span>
+    </a>
+  </aside>
+
+
+  <script>
+    function toggleMenu(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+      }
+    }
+    const widgetImg = document.getElementById('sfn-widget-img');
+    if (widgetImg) {
+      widgetImg.src = 'blue-flame.gif?' + Date.now();
+    }
+    function copiarLink() {
+      navigator.clipboard.writeText(window.location.href);
+      alert("¡Copied!");
+    }
+  </script>
+
+</body>
+</html> 
