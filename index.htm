@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base target="_blank">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Reno Quintero - Enlaces</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="container">
+  <div class="hero-container" style="text-align: center; margin-bottom: 30px;">
+  <h1> <a href="/renoquintero/index.htm" target="_self" style="color: var(--negro)">Reno Quintero - Pagina en progreso </a>
+  </h1>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('escucha')">🎵 Música ▼</button>
+    <div id="escucha" class="dropdown-content">
+      <a href="https://tidal.com/artist/76852786" class="btn-negro">TIDAL</a>
+      <a href="https://music.youtube.com/@reno.quintero" class="btn-negro">YOUTUBE MUSIC</a>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('lee')">📖 Desangre Podcast ▼</button>
+    <div id="lee" class="dropdown-content">
+      <a href="#" class="btn-negro">YOUTUBE (pronto!)</a>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('mira')">👁️ LongVlog ▼</button>
+    <div id="mira" class="dropdown-content">
+      <a href="https://youtu.be/loU-BAVOU3E" class="btn-negro">TEMPORADA 1</a>
+      <a href="#" class="btn-negro">TEMPORADA 2 (PROXIMAMENTE)</a>
+    </div>
+
+    <button class="dropdown-btn" onclick="toggleMenu('apoya')">☕️ Apoya ▼</button>
+    <div id="apoya" class="dropdown-content">
+      <a href="https://ko-fi.com/renoquintero" class="btn-negro">KO-FI</a>
+      <a href="https://reno-quintero.bandcamp.com/track/an-logo" class="btn-negro">BANDCAMP</a>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleMenu(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+      }
+    }
+    const widgetImg = document.getElementById('sfn-widget-img');
+    if (widgetImg) {
+      widgetImg.src = 'blue-flame.gif?' + Date.now();
+    }
+    function copiarLink() {
+      navigator.clipboard.writeText(window.location.href);
+      alert("¡Copied!");
+    }
+  </script>
+
+</body>
+</html> 

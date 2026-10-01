@@ -1,0 +1,215 @@
+html {
+  overflow-y: scroll;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* colores 
+rosa    #d6879c
+negro   #111111
+blanco  #f4f4f0
+gris    #cccccc
+*/
+:root {
+    /* Principal */
+    --principal: rgb(179, 30, 30);
+    /* Secundario */
+    --secundario: #f4f4f0;
+    /* Fondo */
+    --fondo: #cccccc;
+    /* apoyo */
+    --apoyo: #111111;
+    /* acento */
+    --acento: #ff9100;
+}
+
+/* selección de texto en rosa */
+::selection {
+    background-color: var(--principal);
+    color: var(--apoyo);
+}
+
+body {
+    background-color: var(--apoyo);
+    background-image: radial-gradient(var(--secundario) 2px, transparent 2px);
+    background-size: 20px 20px;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--apoyo);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    cursor: url('images/cursor.gif'), auto;
+}
+
+/* Fondo gris */
+#container {
+
+    background-color: var(--fondo);
+    width: 100%;
+    max-width: 550px;
+    border: 6px solid var(--apoyo);
+    box-shadow: 15px 15px 0px var(--principal);
+    padding: 30px;
+}
+
+/* Titulo Reno Quintero*/
+h1 {
+    background-color: var(--principal);
+    display: inline-block;
+    padding: 10px 30px;
+    border: 4px solid var(--apoyo);
+    transform: rotate(-2deg);
+    font-size: 3rem;
+    margin-bottom: 1px;
+    margin-top: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+h1 a {
+    text-decoration: none;
+    color: var(--secundario);
+    transition: color 0.2s;
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+h1:hover {
+    transform: rotate(0deg) scale(1.02);
+    background-color: var(--acento); 
+    border-color: var(--apoyo);
+}
+
+h1:hover a {
+    color: var(--apoyo);
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+/* Discord */
+h3 {
+    background-color: var(--blurple);
+    display: inline-block;
+    padding: 10px;
+    border: 4px solid var(--apoyo);
+    transform: rotate(4deg);
+    font-size: 2.5rem;
+    margin-bottom: 1px;
+    margin-top: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+h3 a {
+    text-decoration: none;
+    color: var(--secundario);
+    transition: color 0.2s;
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+h3:hover {
+    transform: rotate(0deg) scale(1.02);
+    background-color: var(--acento); 
+    border-color: var(--apoyo);
+}
+
+h3:hover a {
+    color: var(--apoyo);
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+/* Texto regular SEO */
+h2 {
+font-size: 1.2rem;
+color: var(--apoyo);
+background: none;
+border: none;
+padding: 0;
+text-transform: none;
+font-family: 'Courier New', Courier, monospace;
+margin-bottom: 1px;
+}
+
+/* Botones de opcion */
+.btn-negro {
+    display: inline-block;
+    background-color: var(--apoyo); 
+    color: var(--secundario);           
+    padding: 12px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 4px solid var(--apoyo);
+    box-shadow: 6px 6px 0px var(--principal);
+    transition: all 0.15s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-negro:hover {
+    background-color: var(--acento); 
+    color: var(--apoyo);
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--apoyo);
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+.btn-negro:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--apoyo);
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+/* Imagen neocities*/
+.neocities {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.neocities:hover a {
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+/* pfp */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* botones dropdown */
+.dropdown-content { 
+  display: none; 
+  margin-bottom: 30px; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.dropdown-btn { 
+  width: 100%; 
+  text-align: center; 
+  cursor: pointer; 
+  border: 4px solid var(--apoyo);
+  padding: 12px 20px; 
+  font-weight: bold; 
+  text-transform: uppercase;
+  background-color: var(--secundario); 
+  margin-bottom: 10px;
+  box-shadow: 6px 6px 0px var(--apoyo); 
+  font-family: "Courier New", Courier, monospace;
+}
+
+.dropdown-btn a {
+ cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+.dropdown-btn:hover { 
+  background-color: var(--acento); 
+  transform: translate(-2px, -2px); 
+  box-shadow: 8px 8px 0px var(--apoyo);
+  cursor: url('images/ani_cursor.gif'), pointer;
+}
+
+.dropdown-btn:hover a {
+    cursor: url('images/ani_cursor.gif'), pointer;
+}
