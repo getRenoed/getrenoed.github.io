@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (wrapper) {
     const headerHTML = `
       <header>
-        <a href="/hub" class="site-title-link">
+        <a href="soulfirenation/index.htm" class="site-title-link">
           <h1 class="site-title">Soulfire Nation</h1>
         </a>
         <div class="site-subtitle">Archival Records</div>
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Inyectar el Footer al final del body
   const footerHTML = `
 <footer>
-  <p>SOULFIRE NATION ARCHIVES — WORK BY <a href="https://reno-quintero.neocities.org">RENO QUINTERO</a></p>
-  <a href="https://neocities.org">Powered by Neocities</a> — <a href="/hub">[Back to main]</a>
+  <p>SOULFIRE NATION ARCHIVES — WORK BY <a href="https://renoquintero.com">RENO QUINTERO</a></p>
+  <a href="/soulfirenation/index.htm">[Back to main]</a>
   <p style="margin-top: 0.25rem; opacity: 0.6;">"To honor them both"</p>
 </footer>
   `;
