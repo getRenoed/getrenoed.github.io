@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (wrapper) {
     const headerHTML = `
       <header>
-        <a href="soulfirenation/index.htm" class="site-title-link">
+        <a href="/soulfirenation/index.htm" class="site-title-link">
           <h1 class="site-title">Soulfire Nation</h1>
         </a>
         <div class="site-subtitle">Archival Records</div>
