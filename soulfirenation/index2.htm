@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>...</title>
   
-  <!-- Redirección tras 2.5 segundos -->
+  <!-- Redirección de respaldo tras 5 segundos -->
   <meta http-equiv="refresh" content="5.0;url=https://renoquintero.com/soulfirenation">
 
   <style>
@@ -58,9 +58,10 @@
 <body>
 
   <!-- Audio -->
-<audio id="campfire" src="https://minecraft.wiki/images/Campfire_crackle3.ogg?7aad3&format=original" preload="auto"></audio>
-<div class="flame-wrapper">
-    <img id="flame" class="tiny-flame" src="https://renoquintero.com/soulfirenation/assets/blue-flame.gif" alt="SFN Crown burning in blue flame" />
+  <audio id="campfire" src="https://minecraft.wiki/images/Campfire_crackle3.ogg?7aad3&format=original" preload="auto"></audio>
+  
+  <div class="flame-wrapper">
+    <img id="flame" class="tiny-flame" src="./assets/blue-flame.gif" alt="SFN Crown burning in blue flame" />
   </div>
 
   <div class="fallback">
@@ -68,66 +69,40 @@
   </div>
 
 <script>
-  const flameImg = document.getElementById('flame');
   const audio = document.getElementById('campfire');
+  const targetUrl = 'https://renoquintero.com/soulfirenation';
 
+  // Redirigir suavemente tras la secuencia
+  function triggerRedirect() {
+    if (audio) {
+      let fadeOut = setInterval(function() {
+        if (audio.volume > 0.05) {
+          audio.volume -= 0.05;
+        } else {
+          audio.volume = 0;
+          clearInterval(fadeOut);
+        }
+      }, 50);
+    }
+    setTimeout(function() {
+      window.location.replace(targetUrl);
+    }, 2500);
+  }
+
+  // Intentar reproducir audio si el navegador lo permite
   if (audio) {
     audio.volume = 0.6;
-
-    // Función que arranca el conteo de 2.5s SOLO cuando el audio empieza a sonar
-    function startSplashSequence() {
-      // Reinicia GIF
-      if (flameImg) {
-        flameImg.src = '/soulfirenation/assets/blue-flame.gif?' + Date.now();
-      }
-
-      // Transición de audio
+    audio.play().then(() => {
+      triggerRedirect();
+    }).catch(() => {
+      // Si el navegador bloquea autoplay, redirige tras 3s de todos modos
       setTimeout(function() {
-        let fadeOut = setInterval(function() {
-          if (audio.volume > 0.05) {
-            audio.volume -= 0.05;
-          } else {
-            audio.volume = 0;
-            clearInterval(fadeOut);
-          }
-        }, 50);
-      }, 2000);
-
-      // Redirección
-      setTimeout(function() {
-        window.location.replace('https://renoquintero.com/soulfirenation');
-      }, 3500);
-    }
-
-    // Intentar reproducir el audio
-    const playPromise = audio.play();
-
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        // El audio cargó y arrancó -> Inicia la secuencia de 2.5s
-        startSplashSequence();
-      }).catch(() => {
-        // Autoplay bloqueado por el navegador -> Arranca al primer clic o tecla
-        const startAudioOnInteraction = () => {
-          audio.play().then(() => {
-            startSplashSequence();
-          });
-          document.removeEventListener('click', startAudioOnInteraction);
-          document.removeEventListener('keydown', startAudioOnInteraction);
-        };
-        document.addEventListener('click', startAudioOnInteraction);
-        document.addEventListener('keydown', startAudioOnInteraction);
-
-        // Respaldo: Si no interactúa en 3.5s, redirige para no trabar la navegación
-        setTimeout(function() {
-          window.location.replace('https://renoquintero.com/soulfirenation');
-        }, 3500);
-      });
-    }
+        window.location.replace(targetUrl);
+      }, 3000);
+    });
   } else {
-    // Respaldo directo si no existe el elemento de audio
     setTimeout(function() {
-      window.location.replace('https://renoquintero.com/soulfirenation');
+      window.location.replace(targetUrl);
     }, 2500);
   }
 </script>
