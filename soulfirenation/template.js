@@ -69,20 +69,26 @@ document.addEventListener("DOMContentLoaded", () => {
   <p>SOULFIRE NATION ARCHIVES — WORK BY <a href="https://renoquintero.com">RENO QUINTERO</a></p>
   <a href="/soulfirenation/index.htm">[Back to main]</a>
   <p style="margin-top: 0.25rem; opacity: 0.6;">"To honor them both"</p>
-  <div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","es","it","fr"],"wrapper_selector":".gtranslate_wrapper","flag_style":"3d","alt_flags":{"en":"usa","es":"mexico"}}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 </footer>
   `;
   document.body.insertAdjacentHTML("beforeend", footerHTML);
 });
 // 5. Inyectar language select
-  const langSelect = `
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","es","it","fr"],"wrapper_selector":".gtranslate_wrapper","flag_style":"3d","alt_flags":{"en":"usa","es":"mexico"}}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-`;
-document.body.innerHTML;
+  window.gtranslateSettings = {
+    default_language: "en",
+    native_language_names: true,
+    detect_browser_language: true,
+    languages: ["en", "es", "it", "fr"],
+    wrapper_selector: ".gtranslate_wrapper",
+    flag_style: "3d",
+    alt_flags: { en: "usa", es: "mexico" },
+  };
+
+  const gtranslateScript = document.createElement("script");
+  gtranslateScript.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
+  gtranslateScript.defer = true;
+  document.body.appendChild(gtranslateScript);
+});
 // Límite en píxeles antes de que se congelen
 const SCROLL_LIMIT = 1350; 
 
