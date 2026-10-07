@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","es","it","fr"],"wrapper_selector":".gtranslate_wrapper","flag_style":"3d","alt_flags":{"en":"usa","es":"mexico"}}</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 `;
+document.body.innerHTML;
 // Límite en píxeles antes de que se congelen
 const SCROLL_LIMIT = 1350; 
 
