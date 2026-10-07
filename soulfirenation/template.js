@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Inyectar la capa de textura (Parchment Overlay)
+  // 1. Inject Parchment Texture Overlay
   const overlay = document.createElement("div");
   overlay.className = "parchment-overlay";
   document.body.prepend(overlay);
 
-  // 2. Inyectar las copas con fuego azul
+  // 2. Inject Goblets with Blue Fire (SVGs)
   const gobletsHTML = `
     <div class="goblet goblet-left">
       <svg viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.insertAdjacentHTML("afterbegin", gobletsHTML);
 
-// 3. Inyectar el Header arriba del contenedor principal
+  // 3. Inject Header
   const wrapper = document.querySelector(".lobby-wrapper");
   if (wrapper) {
     const headerHTML = `
@@ -63,17 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper.insertAdjacentHTML("afterbegin", headerHTML);
   }
 
-  // 4. Inyectar el Footer al final del body
+  // 4. Inject Footer & Translator Container
   const footerHTML = `
-<footer>
-  <p>SOULFIRE NATION ARCHIVES — WORK BY <a href="https://renoquintero.com">RENO QUINTERO</a></p>
-  <a href="/soulfirenation/index.htm">[Back to main]</a>
-  <p style="margin-top: 0.25rem; opacity: 0.6;">"To honor them both"</p>
-</footer>
+    <footer>
+      <p>SOULFIRE NATION ARCHIVES — WORK BY <a href="https://renoquintero.com">RENO QUINTERO</a></p>
+      <a href="/soulfirenation/index.htm">[Back to main]</a>
+      <p style="margin-top: 0.25rem; opacity: 0.6;">"To honor them both"</p>
+      <div class="gtranslate_wrapper"></div>
+    </footer>
   `;
   document.body.insertAdjacentHTML("beforeend", footerHTML);
-});
-// 5. Inyectar language select
+
+  // 5. Initialize GTranslate Widget Properly
   window.gtranslateSettings = {
     default_language: "en",
     native_language_names: true,
@@ -89,12 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
   gtranslateScript.defer = true;
   document.body.appendChild(gtranslateScript);
 });
-// Límite en píxeles antes de que se congelen
-const SCROLL_LIMIT = 1350; 
+
+// 6. Scroll Freeze Logic for Goblets
+const SCROLL_LIMIT = 1350;
 
 window.addEventListener("scroll", () => {
   const goblets = document.querySelectorAll(".goblet");
-  
+
   goblets.forEach((goblet) => {
     if (window.scrollY > SCROLL_LIMIT) {
       goblet.classList.add("stopped");
