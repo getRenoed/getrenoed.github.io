@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const headerHTML = `
       <header>
         <a href="/soulfirenation/index.htm" class="site-title-link">
-          <h1 class="site-title">Soulfire Nation</h1>
+          <h1 class="site-title"><span translate="no">Soulfire Nation</span></h1>
         </a>
         <div class="site-subtitle">Archival Records</div>
       </header>
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Inject Footer & Translator Container
   const footerHTML = `
     <footer>
-      <p>SOULFIRE NATION ARCHIVES — WORK BY <a href="https://renoquintero.com">RENO QUINTERO</a></p>
+      <p><span translate="no">SOULFIRE NATION</span> ARCHIVES — WORK BY <a href="https://renoquintero.com">RENO QUINTERO</a></p>
       <a href="/soulfirenation/index.htm">[Back to main]</a>
       <p style="margin-top: 0.25rem; opacity: 0.6;">"To honor them both"</p>
       <div class="gtranslate_wrapper"></div>
