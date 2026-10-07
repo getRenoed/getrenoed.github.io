@@ -1,4 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Inject Favicon into <head>
+const favicon = document.createElement("link");
+favicon.rel = "icon";
+favicon.type = "image/x-icon";
+favicon.href = "https://renoquintero.com/soulfirenation/favicon.ico";
+
+document.head.appendChild(favicon);
   // 1. Inject Parchment Texture Overlay
   const overlay = document.createElement("div");
   overlay.className = "parchment-overlay";
