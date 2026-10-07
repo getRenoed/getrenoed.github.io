@@ -73,6 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.insertAdjacentHTML("beforeend", footerHTML);
 });
+// 5. Inyectar language select
+  const langSelect = `
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","es","it","fr"],"wrapper_selector":".gtranslate_wrapper","flag_style":"3d","alt_flags":{"en":"usa","es":"mexico"}}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+`;
 // Límite en píxeles antes de que se congelen
 const SCROLL_LIMIT = 1350; 
 
