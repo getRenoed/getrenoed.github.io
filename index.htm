@@ -1,73 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-  <title>Reno Quintero - Enlaces</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reno Quintero</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 30px;
+            margin-top: 40px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .icon-link {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--apoyo);
+            transition: transform 0.2s ease, color 0.2s ease;
+            cursor: url('images/ani_cursor.gif'), pointer;
+        }
+
+        .icon-link i, 
+        .icon-link svg {
+            font-size: 3.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            fill: var(--apoyo);
+            color: var(--apoyo);
+            transition: transform 0.2s ease, color 0.2s ease, fill 0.2s ease, filter 0.2s ease;
+        }
+
+        .subdomain-text {
+            margin-top: 8px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: var(--apoyo);
+            transition: color 0.2s ease;
+            text-align: center;
+        }
+
+        .icon-link:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon-link:hover i,
+        .icon-link:hover svg {
+            color: var(--acento);
+            fill: var(--acento);
+            filter: drop-shadow(0 0 8px var(--acento));
+        }
+
+        .icon-link:hover .subdomain-text {
+            color: var(--principal);
+        }
+
+        .icon-link:active {
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-
 <body>
-  <div id="container">
-  <div class="hero-container" style="text-align: center; margin-bottom: 30px;">
-  <h1> <a href="/index.htm" target="_self" style="color: var(--negro)">Reno Quintero</a>
-  </h1>
-  <h2> Pagina en progreso </h2>
+
+    <div id="container">
+        <div class="hero-container">
+            <h1><a href="https://renoquintero.com/">Reno Quintero</a></h1>
+        </div>
+
+        <div class="icon-grid">
+            <a href="https://renoquintero.com/getRenoed" class="icon-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-gamepad" aria-hidden="true"></i>
+                <span class="subdomain-text">getRenoed</span>
+            </a>
+
+            <a href="https://youtu.be/loU-BAVOU3E" class="icon-link" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 512 512" aria-hidden="true">
+                    <path d="M496 288H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM112 416c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zm288 0c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64zM432 192H80c-17.7 0-32 14.3-32 32s14.3 32 32 32h352c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/>
+                </svg>
+                <span class="subdomain-text">longvlog</span>
+            </a>
+
+            <a href="#" class="icon-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-microphone" aria-hidden="true"></i>
+                <span class="subdomain-text">Poesía Desangre (Pronto!)</span>
+            </a>
+
+            <a href="https://www.youtube.com/@reno.quintero" class="icon-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-music" aria-hidden="true"></i>
+                <span class="subdomain-text">Reno Quintero Music</span>
+            </a>
+        </div>
     </div>
-
-    <button class="dropdown-btn" onclick="toggleMenu('gaming')">🎮 Gaming ▼</button>
-    <div id="gaming" class="dropdown-content">
-      <a href="https://renoquintero.com/getrenoed" class="btn-negro">getRenoed</a>
-    </div>
-
-    <button class="dropdown-btn" onclick="toggleMenu('escucha')">🎵 Música ▼</button>
-    <div id="escucha" class="dropdown-content">
-      <a href="https://tidal.com/artist/76852786" class="btn-negro"><span translate="no">TIDAL</span></a>
-      <a href="https://music.youtube.com/@reno.quintero" class="btn-negro">YOUTUBE MUSIC</a>
-    </div>
-
-    <button class="dropdown-btn" onclick="toggleMenu('lee')">📖 <span translate="no">Desangre </span> Podcast ▼</button>
-    <div id="lee" class="dropdown-content">
-      <a href="#" class="btn-negro">YOUTUBE (pronto!)</a>
-    </div>
-
-    <button class="dropdown-btn" onclick="toggleMenu('mira')">👁️ <span translate="no">LongVlog</span> ▼</button>
-    <div id="mira" class="dropdown-content">
-      <a href="https://youtu.be/loU-BAVOU3E" class="btn-negro">TEMPORADA 1</a>
-      <a href="#" class="btn-negro">TEMPORADA 2 (PROXIMAMENTE)</a>
-    </div>
-
-    <button class="dropdown-btn" onclick="toggleMenu('apoya')">☕️ Apoya ▼</button>
-    <div id="apoya" class="dropdown-content">
-      <a href="https://ko-fi.com/renoquintero" class="btn-negro"><span translate="no">Kofi</span></a>
-      <a href="https://reno-quintero.bandcamp.com/track/an-logo" class="btn-negro"><span translate="no">BANDCAMP</span></a>
-    </div>
-
-  </div>
-
     <!-- language select -->
   <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"es","native_language_names":true,"detect_browser_language":true,"languages":["en","es","it","fr"],"wrapper_selector":".gtranslate_wrapper","flag_style":"3d","alt_flags":{"en":"usa","es":"mexico"}}</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-  <script>
-    function toggleMenu(id) {
-      var x = document.getElementById(id);
-      if (x.style.display === "flex") {
-        x.style.display = "none";
-      } else {
-        x.style.display = "flex";
-      }
-    }
-    const widgetImg = document.getElementById('sfn-widget-img');
-    if (widgetImg) {
-      widgetImg.src = 'blue-flame.gif?' + Date.now();
-    }
-    function copiarLink() {
-      navigator.clipboard.writeText(window.location.href);
-      alert("¡Copied!");
-    }
-  </script>
-
+  
 </body>
-</html> 
+</html>
